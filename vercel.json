@@ -8,17 +8,10 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/^((?!\\.html|css|js|svg|ico|png|jpe?g|gif|webp$).)+/",
-      "dest": "/index.html"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

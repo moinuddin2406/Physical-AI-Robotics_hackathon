@@ -13,19 +13,25 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://moinuddin.github.io',
+  url: 'https://dxb1-dlz95.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub Pages deployment, it is often '/<orgName>.github.io/<projectName>/'
-  baseUrl: '/My_Book/',
+  // For Vercel deployment, it should be '/'
+  baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
+  // Vercel deployment config.
   organizationName: 'Moinuddin', // Usually your GitHub org/user name.
   projectName: 'My_Book', // Usually your repo name.
 
   onBrokenLinks: 'warn', // Changed from 'throw' to prevent build failure
-  onBrokenMarkdownLinks: 'warn',
-  trailingSlash: true,  // Changed to true for better compatibility with static hosting
+  markdown: {
+    mermaid: true,
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
+  trailingSlash: true,  // Changed to true to match Vercel's routing expectations
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -78,6 +84,11 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            to: '/',
+            label: 'Home',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -88,7 +99,11 @@ const config = {
             items: [
               {
                 label: 'Introduction to Physical AI',
-                to: '/docs/intro-physical-ai/',  // Fixed path to match actual structure
+                to: '/docs/intro-physical-ai/',  // Path adjusted for root serving
+              },
+              {
+                label: 'Home',
+                to: '/',
               },
             ],
           },
@@ -115,6 +130,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/Moinuddin/My_Book',  // Fixed to point to actual project
+              },
+              {
+                label: 'Home',
+                to: '/',
               },
             ],
           },
