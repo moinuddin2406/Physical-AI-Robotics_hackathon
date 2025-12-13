@@ -1,0 +1,6 @@
+requirements.txt
+backend/
+Dockerfile
+Dockerfile.frontend
+docker-compose.yml
+*.py
