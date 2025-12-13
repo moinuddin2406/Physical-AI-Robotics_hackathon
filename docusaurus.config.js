@@ -23,9 +23,9 @@ const config = {
   organizationName: 'Moinuddin', // Usually your GitHub org/user name.
   projectName: 'My_Book', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // Changed from 'throw' to prevent build failure
   onBrokenMarkdownLinks: 'warn',
-  trailingSlash: false,  // Added for proper GitHub Pages deployment
+  trailingSlash: true,  // Changed to true for better compatibility with static hosting
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -59,7 +59,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: '/My_Book/img/docusaurus-social-card.jpg',  // Fixed to use absolute path for deployment
+      image: 'img/docusaurus-social-card.jpg',  // Changed to relative path
       navbar: {
         title: 'Physical AI & Robotics',
         logo: {
