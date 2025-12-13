@@ -1,0 +1,25 @@
+{
+  "id": "intro-physical-ai",
+  "title": "Introduction to Physical AI",
+  "slug": "intro-physical-ai",
+  "word_count": 1180,
+  "learning_objectives": [
+    "Define Physical AI and distinguish it from traditional AI",
+    "Understand the historical context and evolution of Physical AI",
+    "Identify key concepts and applications of Physical AI",
+    "Explain the relationship between Physical AI and robotics"
+  ],
+  "key_concepts": [
+    "Physical AI",
+    "Embodiment",
+    "Real-time processing",
+    "Uncertainty management",
+    "Energy efficiency",
+    "Sim-to-real gap"
+  ],
+  "prerequisites": [],
+  "related_chapters": [
+    "basics-humanoid-robotics"
+  ],
+  "position": 1
+}

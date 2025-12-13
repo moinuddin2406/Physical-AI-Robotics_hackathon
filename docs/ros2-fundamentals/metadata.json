@@ -1,0 +1,34 @@
+{
+  "id": "ros2-fundamentals",
+  "title": "ROS 2 Fundamentals",
+  "slug": "ros2-fundamentals",
+  "word_count": 1420,
+  "learning_objectives": [
+    "Understand the architecture of ROS 2 and how it differs from ROS 1",
+    "Explain the concepts of nodes, topics, services, and actions in ROS 2",
+    "Describe package management in ROS 2",
+    "Implement basic robot control using ROS 2 concepts",
+    "Practice with common ROS 2 tools and commands"
+  ],
+  "key_concepts": [
+    "ROS 2",
+    "Nodes",
+    "Topics",
+    "Services",
+    "Actions",
+    "Packages",
+    "Workspaces",
+    "Colcon",
+    "Quality of Service",
+    "DDS"
+  ],
+  "prerequisites": [
+    "intro-physical-ai",
+    "basics-humanoid-robotics"
+  ],
+  "related_chapters": [
+    "digital-twin-simulation",
+    "vision-language-action"
+  ],
+  "position": 3
+}

@@ -1,0 +1,366 @@
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Textbook API
+  description: API for the Physical AI & Humanoid Robotics textbook project, including RAG functionality
+  version: 1.0.0
+  contact:
+    name: Textbook API Support
+    email: support@example.com
+
+servers:
+  - url: https://api.my-book.example.com
+    description: Production server
+  - url: http://localhost:8000
+    description: Development server
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      description: Check if the API is running and healthy
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-12-13T10:00:00Z"
+  
+  /api/query:
+    post:
+      summary: RAG Query
+      description: Submit a query to the RAG system and receive a response based on textbook content
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: The user's question
+                  example: "What is ROS 2?"
+                options:
+                  type: object
+                  properties:
+                    response_complexity:
+                      type: string
+                      enum: [beginner, intermediate, advanced]
+                      default: intermediate
+                      description: Complexity level for the response
+                    language:
+                      type: string
+                      default: en
+                      description: Language code for the response
+                    use_personalization:
+                      type: boolean
+                      default: false
+                      description: Whether to apply personalization
+                    max_chunks:
+                      type: integer
+                      default: 3
+                      minimum: 1
+                      maximum: 10
+                      description: Maximum number of content chunks to consider
+      responses:
+        '200':
+          description: Successful query response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: The generated response to the query
+                  source_chapters:
+                    type: array
+                    items:
+                      type: string
+                    description: List of chapter IDs used to generate the response
+                  confidence:
+                    type: number
+                    format: float
+                    minimum: 0
+                    maximum: 1
+                    description: Confidence level of the response
+                  chunks_used:
+                    type: integer
+                    description: Number of content chunks used in the response
+                  query_id:
+                    type: string
+                    format: uuid
+                    description: Unique identifier for the query
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Invalid query parameters"
+                  details:
+                    type: string
+                    description: Detailed error information
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Internal server error"
+                  details:
+                    type: string
+                    description: Detailed error information
+  
+  /api/chapters:
+    get:
+      summary: List all chapters
+      description: Get a list of all available textbook chapters
+      responses:
+        '200':
+          description: List of chapters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chapter'
+  
+  /api/chapters/{chapter_id}:
+    get:
+      summary: Get chapter details
+      description: Get detailed information about a specific chapter
+      parameters:
+        - name: chapter_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the chapter to retrieve
+          example: "ros2-fundamentals"
+      responses:
+        '200':
+          description: Chapter details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChapterDetail'
+        '404':
+          description: Chapter not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Chapter not found"
+
+  /api/chapters/{chapter_id}/exercises:
+    get:
+      summary: Get chapter exercises
+      description: Get exercises for a specific chapter
+      parameters:
+        - name: chapter_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the chapter
+          example: "ros2-fundamentals"
+      responses:
+        '200':
+          description: List of exercises for the chapter
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapter_id:
+                    type: string
+                  exercises:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Exercise'
+        '404':
+          description: Chapter not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Chapter not found"
+
+  /api/exercises/{exercise_id}/submit:
+    post:
+      summary: Submit exercise answer
+      description: Submit an answer to an exercise and get feedback
+      parameters:
+        - name: exercise_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the exercise
+          example: "ros2-fundamentals-ex1"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - answer
+              properties:
+                answer:
+                  type: string
+                  description: The user's answer to the exercise
+                user_id:
+                  type: string
+                  description: Optional user identifier
+      responses:
+        '200':
+          description: Feedback on the submitted answer
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exercise_id:
+                    type: string
+                    description: The ID of the exercise
+                  is_correct:
+                    type: boolean
+                    description: Whether the answer was correct
+                  feedback:
+                    type: string
+                    description: Feedback on the answer
+                  explanation:
+                    type: string
+                    description: Explanation of the correct answer
+        '404':
+          description: Exercise not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Exercise not found"
+
+components:
+  schemas:
+    Chapter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chapter
+          example: "ros2-fundamentals"
+        title:
+          type: string
+          description: Title of the chapter
+          example: "ROS 2 Fundamentals"
+        description:
+          type: string
+          description: Brief description of the chapter
+          example: "ROS 2 architecture and concepts"
+        word_count:
+          type: integer
+          description: Number of words in the chapter
+          example: 1380
+        position:
+          type: integer
+          description: Position of the chapter in the textbook
+          example: 3
+    
+    ChapterDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          description: Title of the chapter
+        content:
+          type: string
+          description: Full content of the chapter in Markdown
+        word_count:
+          type: integer
+          description: Number of words in the chapter
+        learning_objectives:
+          type: array
+          items:
+            type: string
+          description: Learning objectives for the chapter
+        key_concepts:
+          type: array
+          items:
+            type: string
+          description: Key concepts covered in the chapter
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: Prerequisite chapters or concepts
+        related_chapters:
+          type: array
+          items:
+            type: string
+          description: Related chapters in the textbook
+    
+    Exercise:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the exercise
+          example: "ros2-fundamentals-ex1"
+        type:
+          type: string
+          enum: [multiple_choice, short_answer, practical]
+          description: Type of exercise
+        question:
+          type: string
+          description: The exercise question
+        options:
+          type: array
+          items:
+            type: string
+          description: Options for multiple-choice questions
+        answer:
+          type: string
+          description: The correct answer
+        explanation:
+          type: string
+          description: Explanation of the answer
+        difficulty:
+          type: string
+          enum: [beginner, intermediate, advanced]
+          description: Difficulty level of the exercise

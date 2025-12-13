@@ -1,0 +1,34 @@
+{
+  "id": "vision-language-action",
+  "title": "Vision-Language-Action Systems",
+  "slug": "vision-language-action",
+  "word_count": 1460,
+  "learning_objectives": [
+    "Understand the concept of Vision-Language-Action (VLA) systems in robotics",
+    "Explain the architecture of multi-modal AI systems that integrate perception, language, and action",
+    "Implement multimodal perception systems for robot platforms",
+    "Design language interfaces for robot command and control",
+    "Plan and execute complex tasks using VLA frameworks",
+    "Integrate voice-to-action pipelines for human-robot interaction"
+  ],
+  "key_concepts": [
+    "Vision-Language-Action",
+    "Multi-modal perception",
+    "RT-2",
+    "OpenVLA",
+    "Whisper",
+    "GPT",
+    "Voice-to-action pipeline",
+    "Human-robot interaction"
+  ],
+  "prerequisites": [
+    "intro-physical-ai",
+    "basics-humanoid-robotics",
+    "ros2-fundamentals",
+    "digital-twin-simulation"
+  ],
+  "related_chapters": [
+    "capstone-pipeline"
+  ],
+  "position": 5
+}

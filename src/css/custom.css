@@ -1,0 +1,60 @@
+/* Custom CSS for the Physical AI & Humanoid Robotics textbook */
+
+/* Add custom styles here */
+
+/* Style for the personalization toggle component */
+.personalization-toggle {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Style for the language toggle component */
+.language-toggle {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+/* Custom styling for RAG chat interface if added later */
+.rag-chat-container {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Adjustments for better readability of textbook content */
+.doc-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style for exercise sections */
+.exercise-box {
+  background-color: #f0f8ff;
+  border-left: 4px solid #4a90e2;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+/* Style for key concept highlights */
+.key-concept {
+  background-color: #fff9c4;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .personalization-toggle,
+  .language-toggle {
+    padding: 10px;
+  }
+}

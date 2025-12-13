@@ -1,0 +1,22 @@
+# Dockerfile for Docusaurus frontend
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn install --frozen-lockfile
+
+# Copy the rest of the application
+COPY . .
+
+# Build the Docusaurus site
+RUN yarn build
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Serve the built site
+CMD ["yarn", "serve", "--port", "3000"]

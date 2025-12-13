@@ -1,0 +1,34 @@
+{
+  "id": "digital-twin-simulation",
+  "title": "Digital Twin Simulation",
+  "slug": "digital-twin-simulation",
+  "word_count": 1380,
+  "learning_objectives": [
+    "Understand the concept of digital twins in robotics",
+    "Explain Gazebo physics simulation and its key features",
+    "Describe the structure of Gazebo worlds and model formats",
+    "Integrate sensors like RealSense and LiDAR into simulations",
+    "Create and test simulated environments for robot development",
+    "Evaluate the advantages and limitations of simulation vs. real-world testing"
+  ],
+  "key_concepts": [
+    "Digital twin",
+    "Gazebo",
+    "Simulation",
+    "Physics engine",
+    "Sensor simulation",
+    "Isaac Sim",
+    "Sim-to-real gap",
+    "ROS integration"
+  ],
+  "prerequisites": [
+    "intro-physical-ai",
+    "basics-humanoid-robotics",
+    "ros2-fundamentals"
+  ],
+  "related_chapters": [
+    "vision-language-action",
+    "capstone-pipeline"
+  ],
+  "position": 4
+}

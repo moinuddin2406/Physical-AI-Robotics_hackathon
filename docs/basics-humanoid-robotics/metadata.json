@@ -1,0 +1,29 @@
+{
+  "id": "basics-humanoid-robotics",
+  "title": "Basics of Humanoid Robotics",
+  "slug": "basics-humanoid-robotics",
+  "word_count": 1320,
+  "learning_objectives": [
+    "Describe the anatomy and design principles of humanoid robots",
+    "Identify different types of humanoid robots and their applications",
+    "Explain the key components and systems in humanoid robots",
+    "Understand the control mechanisms used in humanoid robotics"
+  ],
+  "key_concepts": [
+    "Humanoid robots",
+    "Degrees of freedom",
+    "Actuators",
+    "Sensors",
+    "Balance control",
+    "Motion planning",
+    "Locomotion"
+  ],
+  "prerequisites": [
+    "intro-physical-ai"
+  ],
+  "related_chapters": [
+    "ros2-fundamentals",
+    "digital-twin-simulation"
+  ],
+  "position": 2
+}

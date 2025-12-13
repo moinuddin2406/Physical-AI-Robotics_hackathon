@@ -1,0 +1,29 @@
+{
+  "id": "capstone-pipeline",
+  "title": "Capstone: Simple AI-Robot Pipeline",
+  "slug": "capstone-pipeline",
+  "word_count": 1540,
+  "learning_objectives": [
+    "Integrate concepts from all previous chapters into a complete AI-robot system",
+    "Design an end-to-end pipeline connecting perception, decision-making, and action",
+    "Implement a working AI-robot system that demonstrates key concepts from the textbook",
+    "Evaluate the performance and limitations of the integrated system",
+    "Identify opportunities for future enhancement and improvement"
+  ],
+  "key_concepts": [
+    "AI-robot pipeline",
+    "System integration",
+    "End-to-end implementation",
+    "Performance evaluation",
+    "Safety considerations"
+  ],
+  "prerequisites": [
+    "intro-physical-ai",
+    "basics-humanoid-robotics",
+    "ros2-fundamentals",
+    "digital-twin-simulation",
+    "vision-language-action"
+  ],
+  "related_chapters": [],
+  "position": 6
+}
