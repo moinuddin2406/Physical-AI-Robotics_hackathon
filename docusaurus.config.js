@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical AI & Humanoid Robotics — Essentials',
+  title: 'Physical AI & Humanoid Robotics',
   tagline: 'A comprehensive textbook on Physical AI and Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
@@ -55,7 +55,7 @@ const config = {
         },
         blog: false, // Disable blog if not needed
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css', './src/css/modern-dark-gradient-theme.css'],
         },
       }),
     ],
@@ -65,11 +65,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',  // Changed to relative path
+      image: 'img/robot-social-card.jpg',  // Changed to relative path
       navbar: {
-        title: 'Physical AI & Robotics',
+        title: 'Physical AI & Humanoid Robotics',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Physical AI & Humanoid Robotics Logo',
           src: 'img/logo.svg',
         },
         items: [

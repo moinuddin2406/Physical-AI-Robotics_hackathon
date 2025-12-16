@@ -1,0 +1,502 @@
+/* Modern Dark Gradient Theme (Attractive & Trendy) */
+/* Background gradient: Deep Navy Blue (#0F172A) → Purple (#4C1D95) → Teal (#14B8A6) */
+/* Accents: Soft White (#F8FAFC) aur Light Cyan/Teal glow */
+/* Cards border: Faint neon glow in teal/purple */
+
+/* Define CSS variables for the modern dark gradient theme */
+:root {
+  /* Primary colors */
+  --ifm-color-primary: #4C1D95;          /* Purple */
+  --ifm-color-primary-dark: #3e177a;     /* Darker purple */
+  --ifm-color-primary-darker: #321265;   /* Even darker purple */
+  --ifm-color-primary-darkest: #250d4c;  /* Darkest purple */
+  --ifm-color-primary-light: #6d3bb3;    /* Light purple */
+  --ifm-color-primary-lighter: #8c5de0;  /* Lighter purple */
+  --ifm-color-primary-lightest: #b8a2e8; /* Lightest purple */
+
+  /* Teal colors */
+  --ifm-color-teal: #14B8A6;             /* Teal */
+  --ifm-color-teal-dark: #0f9a8d;        /* Darker teal */
+  --ifm-color-teal-darker: #0c7d74;      /* Even darker teal */
+  --ifm-color-teal-light: #2dd4bf;       /* Light teal */
+  --ifm-color-teal-lighter: #5eead4;     /* Lighter teal */
+  --ifm-color-teal-lightest: #a7f3d0;    /* Lightest teal */
+
+  /* Navy Blue colors */
+  --ifm-color-navy: #0F172A;             /* Deep navy blue */
+  --ifm-color-navy-dark: #0a0f1c;        /* Darker navy */
+  --ifm-color-navy-darker: #060a11;      /* Even darker navy */
+  --ifm-color-navy-light: #1c2a48;       /* Lighter navy */
+  --ifm-color-navy-lighter: #334155;     /* Lightest navy */
+
+  /* Accent colors */
+  --ifm-color-accent: #F8FAFC;           /* Soft white */
+  --ifm-color-accent-light: #f0f9ff;     /* Lighter soft white */
+  --ifm-color-accent-dark: #e2e8f0;      /* Darker soft white */
+
+  /* Background and text colors */
+  --ifm-background-color: var(--ifm-color-navy); /* Deep navy blue background */
+  --ifm-background-gradient: linear-gradient(135deg, #0F172A 0%, #4C1D95 50%, #14B8A6 100%); /* Modern gradient */
+  --ifm-background-color-secondary: rgba(248, 250, 252, 0.08); /* Soft white with low opacity */
+  --ifm-text-color: var(--ifm-color-accent); /* Soft white text */
+  --ifm-text-color-secondary: #cbd5e1;   /* Light text */
+  --ifm-text-color-inverse: var(--ifm-color-navy); /* Navy text for light backgrounds */
+  --ifm-border-color: rgba(20, 184, 166, 0.3); /* Semi-transparent teal */
+  --ifm-border-color-light: rgba(76, 29, 149, 0.3); /* Semi-transparent purple */
+
+  /* Navbar styling */
+  --ifm-navbar-background-color: rgba(15, 23, 42, 0.95); /* Semi-transparent navy */
+  --ifm-navbar-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Footer styling */
+  --ifm-footer-background-color: rgba(15, 23, 42, 0.9); /* Navy footer */
+  --ifm-footer-color: var(--ifm-color-accent); /* Soft white footer text */
+  --ifm-footer-link-color: var(--ifm-color-teal-lighter); /* Light teal footer links */
+
+  /* Hero section styling */
+  --ifm-hero-background-color: var(--ifm-background-gradient); /* Gradient hero */
+  --ifm-hero-text-color: var(--ifm-color-accent); /* Soft white hero text */
+
+  /* Card styling */
+  --ifm-card-background-color: rgba(15, 23, 42, 0.7); /* Semi-transparent navy card */
+  --ifm-card-border: 1px solid rgba(20, 184, 166, 0.2); /* Subtle teal border */
+  --ifm-card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  --ifm-card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+
+  /* Code block styling */
+  --ifm-code-background: rgba(20, 184, 166, 0.1); /* Light teal background */
+  --ifm-code-color: var(--ifm-color-teal-light); /* Light teal text */
+  --ifm-code-border-radius: 8px;
+
+  /* Buttons styling */
+  --ifm-button-primary-background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-teal));
+  --ifm-button-primary-text: var(--ifm-color-accent);
+  --ifm-button-secondary-background: transparent;
+  --ifm-button-secondary-text: var(--ifm-color-accent);
+  --ifm-button-border: 1px solid var(--ifm-color-teal);
+  --ifm-button-hover-shadow: 0 10px 15px -3px rgba(20, 184, 166, 0.3), 0 4px 6px -2px rgba(76, 29, 149, 0.2);
+}
+
+/* Apply theme to body */
+body {
+  background: var(--ifm-background-gradient);
+  color: var(--ifm-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: background 0.5s ease;
+}
+
+/* Global background for main content area */
+html {
+  background: var(--ifm-background-gradient);
+}
+
+/* Body styling */
+body {
+  background: var(--ifm-background-gradient);
+  min-height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+  background: var(--ifm-navbar-background-color) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--ifm-navbar-shadow);
+  border-bottom: 1px solid var(--ifm-border-color);
+}
+
+/* Navbar title with accent color */
+.navbar__title {
+  color: var(--ifm-color-accent) !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(20, 184, 166, 0.5); /* Light teal glow */
+}
+
+/* Navbar items styling */
+.navbar__item {
+  color: var(--ifm-text-color-secondary) !important;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar__item:hover {
+  color: var(--ifm-color-teal-lighter) !important;
+}
+
+/* Navbar item glow effect on hover */
+.navbar__item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, var(--ifm-color-teal), var(--ifm-color-primary));
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.6); /* Teal glow */
+}
+
+.navbar__item:hover::after {
+  width: 100%;
+}
+
+/* Main headings with teal/purple colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-color-accent);
+  text-shadow: 0 0 8px rgba(20, 184, 166, 0.3); /* Light teal glow */
+}
+
+/* H1 specific styling with purple accent */
+h1 {
+  color: var(--ifm-color-teal-lighter);
+  border-bottom: 2px solid var(--ifm-color-primary);
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ifm-color-teal), var(--ifm-color-primary));
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.6); /* Teal glow */
+}
+
+/* H2 specific styling with teal accent */
+h2 {
+  color: var(--ifm-color-teal-light);
+  border-bottom: 1px solid var(--ifm-color-teal);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--ifm-color-teal), var(--ifm-color-primary));
+  box-shadow: 0 0 6px rgba(20, 184, 166, 0.4); /* Teal glow */
+}
+
+/* Links with teal color and glow effect */
+a {
+  color: var(--ifm-color-teal-lighter);
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-lighter);
+  text-shadow: 0 0 8px rgba(20, 184, 166, 0.7); /* Teal glow */
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--ifm-color-teal), var(--ifm-color-primary));
+  transition: width 0.3s ease;
+  box-shadow: 0 0 6px rgba(20, 184, 166, 0.6); /* Teal glow */
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Buttons with gradient and glow */
+.button--primary {
+  background: var(--ifm-button-primary-background) !important;
+  color: var(--ifm-button-primary-text) !important;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ifm-button-hover-shadow);
+}
+
+.button--secondary {
+  background: var(--ifm-button-secondary-background) !important;
+  color: var(--ifm-button-secondary-text) !important;
+  border: var(--ifm-button-border) !important;
+  transition: all 0.3s ease;
+}
+
+.button--secondary:hover {
+  background: rgba(20, 184, 166, 0.1) !important;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.3); /* Teal glow */
+}
+
+/* Card styling with faint neon glow effect */
+.card {
+  background: var(--ifm-card-background-color) !important;
+  border: var(--ifm-card-border) !important;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--ifm-card-shadow);
+}
+
+/* Card glow effect using box-shadow for subtle neon effect */
+.card {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(20, 184, 166, 0.1); /* Faint teal/purple neon border */
+}
+
+/* Card hover effect with enhanced faint glow */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    var(--ifm-card-hover-shadow),
+    0 0 15px rgba(20, 184, 166, 0.3), /* Teal glow */
+    0 0 30px rgba(76, 29, 149, 0.2); /* Purple glow */
+  border: 1px solid rgba(20, 184, 166, 0.3) !important; /* Faint teal border */
+}
+
+.card__body, .card__header, .card__footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer styling with dark theme */
+.footer {
+  background: var(--ifm-footer-background-color) !important;
+  color: var(--ifm-footer-color);
+  border-top: 1px solid var(--ifm-border-color);
+  padding: 5rem 0 2rem 0;
+  margin-top: 4rem;
+}
+
+/* Footer links */
+.footer__link-item {
+  color: var(--ifm-footer-link-color) !important;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-accent) !important;
+  text-shadow: 0 0 8px rgba(20, 184, 166, 0.6); /* Teal glow */
+}
+
+/* Hero section with gradient background */
+.hero--primary {
+  background: var(--ifm-hero-background-color) !important;
+  color: var(--ifm-hero-text-color);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Hero accent bar */
+.hero--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ifm-color-teal), var(--ifm-color-primary));
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.8); /* Teal glow */
+}
+
+/* Code blocks with dark theme */
+.prism-code {
+  background-color: var(--ifm-code-background) !important;
+  color: var(--ifm-code-color) !important;
+  border-radius: var(--ifm-code-border-radius);
+  padding: 1rem !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlight important text */
+.highlight {
+  color: var(--ifm-color-teal-lighter);
+  background: rgba(20, 184, 166, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+/* Table styling with dark theme */
+table {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(15, 23, 42, 0.5);
+  width: 100%;
+}
+
+th {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-navy));
+  color: var(--ifm-color-accent);
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid var(--ifm-border-color);
+  border-right: 1px solid var(--ifm-border-color);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(76, 29, 149, 0.1);
+}
+
+tr:hover {
+  background-color: rgba(20, 184, 166, 0.15);
+}
+
+/* Sidebar active links */
+.menu__list-item > .menu__link--active,
+.menu__list-item-collapsible .menu__link--active {
+  border-left: 3px solid var(--ifm-color-teal) !important;
+  color: var(--ifm-color-teal-lighter) !important;
+  background: rgba(20, 184, 166, 0.1) !important;
+  text-shadow: 0 0 8px rgba(20, 184, 166, 0.3); /* Teal glow */
+}
+
+/* Admonitions with theme colors */
+.admonition {
+  border-radius: 8px !important;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  overflow: hidden;
+  background-color: rgba(15, 23, 42, 0.5) !important;
+}
+
+.admonition--note {
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.admonition--info {
+  border-left: 4px solid var(--ifm-color-teal);
+}
+
+.admonition--tip {
+  border-left: 4px solid var(--ifm-color-teal-light);
+}
+
+.admonition--caution {
+  border-left: 4px solid #f59e0b; /* Yellow for caution */
+}
+
+.admonition--danger {
+  border-left: 4px solid #ef4444; /* Red for danger */
+}
+
+/* Blockquotes with gradient border */
+blockquote {
+  border-left: 4px solid var(--ifm-color-teal);
+  background: rgba(15, 23, 42, 0.5);
+  padding: 18px 24px;
+  border-radius: 0 8px 8px 0;
+  color: var(--ifm-text-color-secondary);
+  font-style: italic;
+  position: relative;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  color: rgba(20, 184, 166, 0.3); /* Light teal quote mark */
+  font-family: Georgia, serif;
+}
+
+/* Search bar styling */
+.navbar__search-input {
+  border-radius: 6px;
+  border: 1px solid var(--ifm-border-color);
+  padding: 8px 12px;
+  background-color: rgba(15, 23, 42, 0.7);
+  color: var(--ifm-text-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__search-input:focus {
+  border-color: var(--ifm-color-teal);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.3);
+  outline: none;
+}
+
+/* Mobile menu styling */
+.navbar-sidebar__brand {
+  background: var(--ifm-navbar-background-color);
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-border-color);
+}
+
+/* Custom styling for features section */
+.features {
+  padding: 5rem 0;
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+/* Feature image styling */
+img.featureImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-border-color);
+}
+
+img.featureImage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(20, 184, 166, 0.3), 0 0 15px rgba(76, 29, 149, 0.3); /* Teal/purple glow */
+}
+
+/* Additional styling for better visual hierarchy in technical content */
+.markdown > h1:first-child {
+  margin-top: 0;
+}
+
+.markdown > h2, .markdown > h3, .markdown > h4 {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .navbar__item::after {
+    display: none;
+  }
+
+  .card::before {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}

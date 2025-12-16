@@ -1,34 +1,63 @@
-/* Custom CSS for the Physical AI & Humanoid Robotics site */
-/* Modern, vibrant AI & Robotics theme with improved contrast */
+/* Combined theme incorporating blue, white, sky blue, and purple with original custom styles */
 
-/* Root variables for consistent theming */
+/* Define CSS variables for the new color theme */
 :root {
-  --ifm-color-primary: #4f46e5;          /* Modern indigo blue */
-  --ifm-color-primary-dark: #4338ca;     /* Darker indigo */
-  --ifm-color-primary-darker: #3730a3;   /* Even darker indigo */
-  --ifm-color-primary-darkest: #312e81;  /* Darkest indigo */
-  --ifm-color-primary-light: #6366f1;    /* Light indigo */
-  --ifm-color-primary-lighter: #818cf8;  /* Lighter indigo */
-  --ifm-color-primary-lightest: #c7d2fe; /* Lightest indigo */
+  /* Primary blue colors */
+  --ifm-color-primary: #1e40af;          /* Blue-800 */
+  --ifm-color-primary-dark: #1e3a8a;     /* Darker blue */
+  --ifm-color-primary-darker: #172554;   /* Even darker blue */
+  --ifm-color-primary-darkest: #0f172a;  /* Darkest blue (also dark slate) */
+  --ifm-color-primary-light: #3b82f6;    /* Light blue */
+  --ifm-color-primary-lighter: #60a5fa;  /* Lighter blue */
+  --ifm-color-primary-lightest: #dbeafe; /* Lightest blue */
+  
+  /* Sky blue colors */
+  --ifm-color-sky: #0ea5e9;              /* Sky blue 500 */
+  --ifm-color-sky-light: #7dd3fc;        /* Light sky blue */
+  --ifm-color-sky-lighter: #bae6fd;      /* Lighter sky blue */
+  --ifm-color-sky-lightest: #e0f2fe;     /* Lightest sky blue */
+  
+  /* Purple colors */
+  --ifm-color-purple: #8b5cf6;           /* Purple 500 */
+  --ifm-color-purple-light: #a78bfa;     /* Light purple */
+  --ifm-color-purple-lighter: #c4b5fd;   /* Lighter purple */
+  --ifm-color-purple-lightest: #ddd6fe;  /* Lightest purple */
+  --ifm-color-purple-dark: #7c3aed;      /* Dark purple */
+  
+  /* Secondary color for contrast */
   --ifm-color-secondary: #0f172a;        /* Dark slate for contrast */
   --ifm-color-secondary-light: #334155;  /* Lighter dark slate */
-  --ifm-color-accent: #06b6d4;           /* Vibrant teal accent */
-  --ifm-color-accent-light: #7dd3fc;     /* Light teal accent */
-  --ifm-background-color: #f8fafc;       /* Clean light blue-100 background */
-  --ifm-background-color-secondary: #f1f5f9; /* Light blue-200 background */
-  --ifm-text-color: #0f172a;             /* Dark slate text */
-  --ifm-text-color-secondary: #475569;   /* Medium slate text */
-  --ifm-border-color: #cbd5e1;           /* Light border */
+  
+  /* Accent color in purple */
+  --ifm-color-accent: var(--ifm-color-purple);           /* Purple accent */
+  --ifm-color-accent-light: var(--ifm-color-purple-light); /* Light purple accent */
+  
+  /* Background and text colors */
+  --ifm-background-color: var(--ifm-color-white);       /* Pure white background */
+  --ifm-background-color-secondary: var(--ifm-color-sky-lightest); /* Light sky blue background for sections */
+  --ifm-text-color: var(--ifm-color-secondary);          /* Dark slate text */
+  --ifm-text-color-secondary: var(--ifm-color-gray);     /* Medium gray text */
+  --ifm-border-color: var(--ifm-color-gray-lighter);     /* Lighter gray border */
+  
+  /* Navbar styling */
   --ifm-navbar-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Footer styling */
   --ifm-footer-background-color: #0f172a; /* Dark slate footer */
   --ifm-footer-color: #e2e8f0;           /* Light footer text */
   --ifm-footer-link-color: #94a3b8;      /* Footer link color */
-  --ifm-hero-text-color: #0f172a;        /* Dark hero text */
-  --ifm-hero-background-color: #f1f5f9;  /* Light hero background */
-  --ifm-card-background-color: #ffffff;  /* Card background */
-  --ifm-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); /* Card shadow */
-  --ifm-code-background: #f1f5f9;        /* Code block background */
-  --ifm-code-color: #0f172a;             /* Code text color */
+  
+  /* Hero section styling */
+  --ifm-hero-text-color: var(--ifm-color-secondary);     /* Dark text for hero */
+  --ifm-hero-background-color: var(--ifm-color-sky-lightest); /* Light sky blue hero background */
+  
+  /* Card styling */
+  --ifm-card-background-color: var(--ifm-color-white);   /* Card background */
+  --ifm-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);      /* Card shadow */
+  
+  /* Code block styling */
+  --ifm-code-background: var(--ifm-color-sky-lightest);   /* Code block background */
+  --ifm-code-color: var(--ifm-color-secondary);           /* Code text color */
 }
 
 /* Clean light background for better reading comfort */
@@ -48,7 +77,7 @@ body {
 .navbar {
   background-color: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(79, 70, 229, 0.15);
+  border-bottom: 1px solid rgba(30, 64, 175, 0.15); /* Blue tinted border */
   box-shadow: var(--ifm-navbar-shadow);
   position: sticky !important;
   top: 0;
@@ -85,7 +114,7 @@ body {
   height: 2.5px;
   bottom: -6px;
   left: 0;
-  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-accent));
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-purple)); /* Blue to purple gradient */
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -117,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* H1 specific styling for chapter titles */
+/* H1 specific styling for chapter titles with blue color */
 h1 {
   font-size: 2.2rem !important;
   border-bottom: 2px solid var(--ifm-color-primary-light);
@@ -126,16 +155,16 @@ h1 {
   color: var(--ifm-color-primary);
 }
 
-/* H2 specific styling for section titles */
+/* H2 specific styling for section titles with purple accent */
 h2 {
   font-size: 1.8rem !important;
-  border-bottom: 1px solid var(--ifm-color-primary-light);
+  border-bottom: 1px solid var(--ifm-color-purple-light);
   padding-bottom: 0.4rem;
   margin-bottom: 1.5rem;
-  color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-purple-dark);
 }
 
-/* H3 specific styling */
+/* H3 specific styling with blue color */
 h3 {
   font-size: 1.5rem !important;
   color: var(--ifm-color-primary-darker);
@@ -174,20 +203,20 @@ h3 {
 .menu__list-item > a:hover,
 .menu__list-item > a:focus,
 .menu__list-item > .menu__link--active {
-  background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(6, 182, 212, 0.08)) !important;
-  border-left: 3px solid var(--ifm-color-primary) !important;
+  background: linear-gradient(90deg, rgba(30, 64, 175, 0.08), rgba(139, 92, 246, 0.08)) !important; /* Blue to purple gradient */
+  border-left: 3px solid var(--ifm-color-purple) !important; /* Purple accent border */
   border-radius: 0 6px 6px 0 !important;
   transform: translateX(4px);
   transition: all 0.3s ease;
-  color: var(--ifm-color-primary) !important;
-  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.1);
+  color: var(--ifm-color-purple) !important; /* Purple text for active items */
+  box-shadow: 0 2px 5px rgba(139, 92, 246, 0.1); /* Purple shadow */
 }
 
 /* Active category styling */
 .menu__list-item-collapsible .menu__link--active,
 .menu__list-item-collapsible--active .menu__link {
-  background: linear-gradient(90deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1)) !important;
-  border-left: 3px solid var(--ifm-color-primary) !important;
+  background: linear-gradient(90deg, rgba(30, 64, 175, 0.1), rgba(139, 92, 246, 0.1)) !important; /* Blue to purple gradient */
+  border-left: 3px solid var(--ifm-color-purple) !important;
   font-weight: 600;
 }
 
@@ -209,12 +238,12 @@ h3 {
 .button:hover, .button--primary:hover, .button--secondary:hover {
   transform: translateY(-2px);
   transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 6px 12px rgba(30, 64, 175, 0.25);
 }
 
-/* Custom button styling for the hero section */
+/* Custom button styling for the hero section with blue-purple gradient */
 .button--primary {
-  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-accent)) !important;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-purple)) !important;
   border: none !important;
   color: white !important;
   font-weight: 700;
@@ -223,16 +252,16 @@ h3 {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 /* Button hover effects */
 .button--primary:hover, .button--primary:focus {
-  background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-accent)) !important;
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-purple)) !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 8px 16px rgba(30, 64, 175, 0.4);
   transition: all 0.3s ease;
 }
 
@@ -249,9 +278,9 @@ h3 {
 }
 
 .button--secondary:hover {
-  background: rgba(79, 70, 229, 0.05) !important;
+  background: rgba(30, 64, 175, 0.05) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 6px 12px rgba(30, 64, 175, 0.15);
   transition: all 0.3s ease;
 }
 
@@ -269,7 +298,7 @@ h3 {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.18) !important;
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.18) !important;
   z-index: 2;
 }
 
@@ -286,7 +315,7 @@ h3 {
 
 /* Footer styling with dark theme */
 .footer {
-  background: linear-gradient(135deg, var(--ifm-footer-background-color), #1e293b) !important;
+  background: linear-gradient(135deg, var(--ifm-footer-background-color), #1e293b) !important; /* Dark slate gradient */
   color: var(--ifm-footer-color);
   border-top: none;
   padding: 5rem 0 2rem 0;
@@ -301,7 +330,7 @@ h3 {
 }
 
 .footer__link-item:hover {
-  color: var(--ifm-color-primary-lighter) !important;
+  color: var(--ifm-color-purple-lighter) !important; /* Purple hover effect */
   transform: translateX(3px);
 }
 
@@ -322,7 +351,7 @@ h3 {
   left: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-accent));
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-purple)); /* Blue to purple accent */
   border-radius: 2px;
 }
 
@@ -343,7 +372,7 @@ h3 {
 
 /* Code block styling */
 .docusaurus-highlight-code-line {
-  background-color: rgba(79, 70, 229, 0.1) !important;
+  background-color: rgba(30, 64, 175, 0.1) !important; /* Blue tinted highlight */
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
@@ -362,7 +391,7 @@ h3 {
 
 /* Table styling */
 table {
-  border: 1px solid rgba(79, 70, 229, 0.2);
+  border: 1px solid rgba(30, 64, 175, 0.2); /* Blue tinted border */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -370,28 +399,28 @@ table {
 }
 
 th, td {
-  border: 1px solid rgba(79, 70, 229, 0.2);
+  border: 1px solid rgba(30, 64, 175, 0.2); /* Blue tinted border */
   padding: 10px 14px;
 }
 
 th {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
-  color: var(--ifm-color-primary);
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(139, 92, 246, 0.1)); /* Blue to purple gradient */
+  color: var(--ifm-color-white);
   font-weight: 600;
 }
 
 tr:nth-child(even) {
-  background-color: rgba(79, 70, 229, 0.03);
+  background-color: rgba(14, 165, 233, 0.05); /* Sky blue tinted rows */
 }
 
 tr:hover {
-  background-color: rgba(79, 70, 229, 0.08);
+  background-color: rgba(30, 64, 175, 0.08); /* Blue tinted hover */
 }
 
-/* Blockquotes styling */
+/* Blockquotes styling with blue accent */
 blockquote {
-  border-left: 4px solid var(--ifm-color-primary);
-  background: linear-gradient(to bottom, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
+  border-left: 4px solid var(--ifm-color-primary); /* Blue accent border */
+  background: linear-gradient(to bottom, rgba(30, 64, 175, 0.05), rgba(14, 165, 233, 0.05)); /* Blue to sky blue gradient */
   padding: 18px 24px;
   border-radius: 0 8px 8px 0;
   color: var(--ifm-text-color-secondary);
@@ -407,7 +436,7 @@ blockquote::before {
   position: absolute;
   top: -20px;
   left: 10px;
-  color: rgba(79, 70, 229, 0.2);
+  color: rgba(30, 64, 175, 0.2); /* Light blue quote mark */
   font-family: Georgia, serif;
 }
 
@@ -421,23 +450,23 @@ blockquote::before {
 }
 
 .admonition--note {
-  border-left: 4px solid var(--ifm-color-primary);
+  border-left: 4px solid var(--ifm-color-primary); /* Blue accent */
 }
 
 .admonition--info {
-  border-left: 4px solid var(--ifm-color-accent);
+  border-left: 4px solid var(--ifm-color-sky); /* Sky blue accent */
 }
 
 .admonition--tip {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid var(--ifm-color-purple); /* Purple accent */
 }
 
 .admonition--caution {
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid #f59e0b; /* Yellow accent for caution */
 }
 
 .admonition--danger {
-  border-left: 4px solid #ef4444;
+  border-left: 4px solid #ef4444; /* Red accent for danger */
 }
 
 /* Link styling */
@@ -448,7 +477,7 @@ a {
 }
 
 a:hover {
-  color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-purple); /* Purple on hover */
 }
 
 a::after {
@@ -479,7 +508,7 @@ a:hover::after {
 
 .navbar__search-input:focus {
   border-color: var(--ifm-color-primary-light);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
   outline: none;
 }
 
@@ -490,14 +519,9 @@ a:hover::after {
   border-bottom: 1px solid var(--ifm-border-color);
 }
 
-/* Dark mode toggle styling - ensure it's visible and centered */
-.react-toggle-track {
-  background-color: var(--ifm-color-primary) !important;
-}
-
-/* Custom styling for the hero section */
+/* Custom styling for the hero section with sky-blue to purple gradient */
 .hero--primary {
-  background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
+  background: linear-gradient(135deg, #e0f2fe, #f3e8ff) !important; /* Sky blue to light purple */
   color: var(--ifm-hero-text-color);
   position: relative;
   overflow: hidden;
@@ -511,7 +535,7 @@ a:hover::after {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-accent));
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-purple)); /* Blue to purple accent */
 }
 
 /* Custom styling for features section */
@@ -530,19 +554,19 @@ img.featureImage {
   background: white;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 1px solid rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(30, 64, 175, 0.1);
 }
 
 img.featureImage:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 12px 25px rgba(30, 64, 175, 0.15);
 }
 
-/* Highlight important text */
+/* Highlight important text with purple */
 .highlight {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-purple);
   font-weight: 600;
-  background: rgba(79, 70, 229, 0.1);
+  background: rgba(139, 92, 246, 0.1); /* Light purple background */
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -569,7 +593,7 @@ img.featureImage:hover {
   content: "#";
   position: absolute;
   left: -25px;
-  color: rgba(79, 70, 229, 0.3);
+  color: rgba(30, 64, 175, 0.3); /* Light blue hash marks */
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -590,7 +614,7 @@ dl {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: var(--ifm-card-shadow);
-  border-left: 4px solid var(--ifm-color-primary);
+  border-left: 4px solid var(--ifm-color-primary); /* Blue accent border */
 }
 
 dt {

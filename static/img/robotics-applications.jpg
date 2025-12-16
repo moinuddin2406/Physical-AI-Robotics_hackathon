@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#0a0f2c"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00bfff" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+  <rect width="600" height="400" fill="url(#grid)" />
+  
+  <!-- Robot arm with gripper -->
+  <g transform="translate(300, 200)">
+    <!-- Shoulder -->
+    <circle cx="0" cy="-80" r="20" fill="#00bfff" opacity="0.8"/>
+    <!-- Upper arm -->
+    <rect x="-10" y="-80" width="20" height="100" rx="5" fill="#00bfff" opacity="0.8"/>
+    <!-- Elbow joint -->
+    <circle cx="0" cy="0" r="15" fill="#0077cc" opacity="0.8"/>
+    <!-- Forearm -->
+    <rect x="-8" y="0" width="16" height="80" rx="4" fill="#00bfff" opacity="0.8"/>
+    <!-- Wrist -->
+    <circle cx="0" cy="80" r="12" fill="#0077cc" opacity="0.8"/>
+    <!-- Gripper -->
+    <rect x="-20" y="85" width="8" height="30" rx="4" fill="#00bfff" opacity="0.8"/>
+    <rect x="12" y="85" width="8" height="30" rx="4" fill="#00bfff" opacity="0.8"/>
+    <!-- Gripper fingers -->
+    <rect x="-22" y="115" width="12" height="10" rx="3" fill="#0077cc" opacity="0.8"/>
+    <rect x="10" y="115" width="12" height="10" rx="3" fill="#0077cc" opacity="0.8"/>
+  </g>
+  
+  <!-- Industrial elements -->
+  <rect x="100" y="100" width="40" height="60" fill="#0077cc" opacity="0.6"/>
+  <rect x="460" y="100" width="40" height="60" fill="#0077cc" opacity="0.6"/>
+  <rect x="100" y="250" width="40" height="60" fill="#0077cc" opacity="0.6"/>
+  <rect x="460" y="250" width="40" height="60" fill="#0077cc" opacity="0.6"/>
+  
+  <!-- Data flow -->
+  <g opacity="0.6">
+    <circle cx="200" cy="50" r="5" fill="#00bfff">
+      <animate attributeName="cy" values="50;350;50" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="50" r="5" fill="#00bfff">
+      <animate attributeName="cy" values="50;350;50" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="50" r="5" fill="#00bfff">
+      <animate attributeName="cy" values="50;350;50" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Floating elements -->
+  <circle cx="100" cy="100" r="6" fill="#00bfff" opacity="0.6"/>
+  <circle cx="500" cy="80" r="4" fill="#00bfff" opacity="0.6"/>
+  <circle cx="150" cy="350" r="5" fill="#00bfff" opacity="0.6"/>
+  <circle cx="450" cy="320" r="3" fill="#00bfff" opacity="0.6"/>
+  
+  <!-- Title -->
+  <text x="300" y="370" text-anchor="middle" font-family="Arial" font-size="20" fill="white" opacity="0.9">Robotics Applications</text>
+</svg>

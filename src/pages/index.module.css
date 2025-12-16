@@ -1,13 +1,13 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(rgba(10, 15, 44, 0.7), rgba(13, 21, 54, 0.7)),
+    url('/img/robot-hero.svg') no-repeat center center;
+  background-size: cover;
+  color: white;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +20,93 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Additional hero styling for the futuristic look */
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00bfff;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styles for the chapter cards container */
+.chapterCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet view: 2 cards per row */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .chapterCardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile view: 1 card per row */
+@media screen and (max-width: 767px) {
+  .chapterCardsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chapter card styling */
+.chapterCard {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapterCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.chapterCard h3 {
+  color: #0d1536;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chapterCard p {
+  color: #555;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.chapterCardIcon {
+  width: 24px;
+  height: 24px;
+  fill: #00bfff;
 }

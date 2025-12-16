@@ -1,39 +1,49 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import Heading from '@theme/Heading';
+import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Physical AI',
+    title: 'Physical AI Fundamentals',
+    image: 'img/physical-ai.jpg',
     description: (
       <>
-        Explore how AI can be grounded in physical reality for robotics applications.
+        Learn the core principles of Physical AI, combining perception, reasoning, 
+        and action to create intelligent embodied systems.
       </>
     ),
   },
   {
     title: 'Humanoid Robotics',
+    image: 'img/humanoid-robot.jpg',
     description: (
       <>
-        Learn about the design, control, and autonomy of humanoid robots.
+        Explore the design, control, and implementation of humanoid robots 
+        that interact with the physical world.
       </>
     ),
   },
   {
-    title: 'Comprehensive Textbook',
+    title: 'Practical Applications',
+    image: 'img/robotics-applications.jpg',
     description: (
       <>
-        A complete guide covering all aspects from fundamentals to advanced topics.
+        Discover real-world applications of Physical AI and humanoid robotics 
+        across various industries and domains.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({image, title, description}) {
   return (
     <div className={clsx('col col--4')}>
+      <div className="text--center">
+        <img src={image} className={styles.featureImage} alt={title} />
+      </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
     </div>

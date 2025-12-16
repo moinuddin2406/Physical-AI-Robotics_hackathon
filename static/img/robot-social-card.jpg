@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Futuristic background -->
+  <rect width="800" height="400" fill="#0a0f2c"/>
+  <rect x="0" y="0" width="800" height="400" fill="url(#gradient)"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f2c"/>
+      <stop offset="100%" stop-color="#101a40"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00bfff" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+  <rect width="800" height="400" fill="url(#grid)" />
+  
+  <!-- Robot silhouettes -->
+  <g transform="translate(200, 150)" filter="url(#glow)">
+    <rect x="100" y="50" width="60" height="80" rx="8" fill="#00bfff" opacity="0.7"/>
+    <rect x="115" y="70" width="30" height="40" rx="4" fill="white" opacity="0.3"/>
+    <rect x="85" y="70" width="10" height="40" rx="5" fill="#00bfff" opacity="0.7"/>
+    <rect x="185" y="70" width="10" height="40" rx="5" fill="#00bfff" opacity="0.7"/>
+    <rect x="105" y="130" width="12" height="50" rx="6" fill="#0077cc" opacity="0.7"/>
+    <rect x="163" y="130" width="12" height="50" rx="6" fill="#0077cc" opacity="0.7"/>
+    <circle cx="130" cy="45" r="25" fill="#00bfff" opacity="0.7"/>
+    <circle cx="122" cy="40" r="4" fill="white" opacity="0.8"/>
+    <circle cx="138" cy="40" r="4" fill="white" opacity="0.8"/>
+    <circle cx="130" cy="55" r="3" fill="#0077cc"/>
+  </g>
+
+  <g transform="translate(450, 150)" filter="url(#glow)">
+    <rect x="100" y="50" width="60" height="80" rx="8" fill="#00bfff" opacity="0.7"/>
+    <rect x="115" y="70" width="30" height="40" rx="4" fill="white" opacity="0.3"/>
+    <rect x="85" y="70" width="10" height="40" rx="5" fill="#00bfff" opacity="0.7"/>
+    <rect x="185" y="70" width="10" height="40" rx="5" fill="#00bfff" opacity="0.7"/>
+    <rect x="105" y="130" width="12" height="50" rx="6" fill="#0077cc" opacity="0.7"/>
+    <rect x="163" y="130" width="12" height="50" rx="6" fill="#0077cc" opacity="0.7"/>
+    <circle cx="130" cy="45" r="25" fill="#00bfff" opacity="0.7"/>
+    <circle cx="122" cy="40" r="4" fill="white" opacity="0.8"/>
+    <circle cx="138" cy="40" r="4" fill="white" opacity="0.8"/>
+    <circle cx="130" cy="55" r="3" fill="#0077cc"/>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="100" cy="100" r="5" fill="#00bfff" opacity="0.6">
+    <animate attributeName="cy" values="100;300;100" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="200" r="4" fill="#00bfff" opacity="0.6">
+    <animate attributeName="cy" values="200;50;200" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="350" r="3" fill="#00bfff" opacity="0.6">
+    <animate attributeName="cy" values="350;100;350" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Title text -->
+  <text x="400" y="80" text-anchor="middle" font-family="Arial" font-size="24" fill="white" opacity="0.9">Physical AI & Humanoid Robotics</text>
+  <text x="400" y="110" text-anchor="middle" font-family="Arial" font-size="16" fill="#00bfff" opacity="0.8">Advanced Robotics Textbook</text>
+</svg>
