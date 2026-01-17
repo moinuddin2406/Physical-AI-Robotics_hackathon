@@ -1,0 +1,7 @@
+runtime: python3.10
+framework: fastapi
+python_version: "3.10"
+
+# Pre-build command to ensure dependencies are installed
+pre_build:
+  - pip install -r requirements_hf.txt

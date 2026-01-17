@@ -1,0 +1,15 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+qdrant-client==1.7.0
+google-generativeai==0.4.0
+cohere==4.4.3
+pydantic==2.5.0
+pydantic-settings==2.5.2
+python-multipart==0.0.6
+python-dotenv==1.0.0
+psycopg2-binary==2.9.9  # Removed for Hugging Face compatibility
+pyyaml==6.0.1
+pytest==7.4.3
+pytest-asyncio==0.21.1
+requests==2.31.0
+numpy==1.24.3
